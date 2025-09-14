@@ -1,0 +1,257 @@
+:root {
+  --bg-white: #f2f2f2;
+  --color-balck: #0d0b00;
+  ---color-text-white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter';
+}
+body {
+  background-color: var(--bg-white);
+  color: var(--color-text);
+  transition: 0.3s ease;
+}
+
+body.dark,
+.choice.dark {
+  background-color: var(--color-balck);
+  color: var(---color-text-white);
+}
+
+.header--nav-bar {
+  display: flex;
+  align-items: flex-end;
+  margin: 18px 64px;
+  gap: 35px;
+}
+.header--nav-bar__link {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.header--switch-tem {
+  display: none;
+}
+
+.header--switch {
+  margin-left: auto;
+}
+
+.header--switch-slider {
+  width: 50px;
+  height: 24px;
+  background-color: gray;
+  display: block;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+.header--switch-slider::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.header--switch-tem:checked + .header--switch-slider::before {
+  transform: translateX(26px);
+}
+
+.divider-line {
+  height: 1px;
+  background-color: #cbd5e1; /* Базовый цвет */
+  width: 100%;
+  margin: 25px 0;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+/* секция домашняя */
+.home {
+  margin: 80px;
+}
+
+.home--apofeos {
+  margin: auto;
+  max-width: 1280px;
+  height: 640px;
+  background-image: url(img/Фон.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 768px;
+  text-align: center;
+}
+
+.description--table {
+  font-size: 52px;
+  color: var(---color-text-white);
+}
+
+.description--description {
+  font-size: 18px;
+  color: var(---color-text-white);
+}
+
+/* секция choice */
+
+.choice {
+  margin-top: 112px;
+  background-color: var(---color-text-white);
+}
+
+.choice--wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choice--img-reliability {
+  max-width: 73px;
+  margin-bottom: 32px;
+}
+
+.choice--img-project {
+  width: 100%;
+  max-width: 1280px;
+  max-height: 738px;
+  margin-bottom: 112px;
+}
+
+.choice--table {
+  color: var(---color-black);
+  max-width: 768px;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.choice--description {
+  max-width: 768px;
+  font-size: 18px;
+  color: var(---color-black);
+}
+
+.choice--link-btn {
+  border: 1px solid #0d0b00;
+  text-decoration: none;
+  color: var(---color-black);
+  padding: 5px 24px;
+  margin-bottom: 60px;
+  margin-top: 166px;
+}
+
+.choice--sercices-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 80px 80px 112px 80px;
+  gap: 30px;
+}
+
+.choice--sercices {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--bg-white);
+  max-width: 405px;
+  min-width: 305px;
+  flex: 1;
+}
+
+.choice--sercices-img {
+  padding: 32px;
+}
+
+.choice--sercices-table {
+  padding: 24px 32px 16px 32px;
+  font-size: 32px;
+}
+
+.choice--sercices-text {
+  padding: 16px 32px 80px 32px;
+}
+/* секция advantage */
+
+.advantage--wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.advantage--text {
+  margin: 112px 0 16px;
+}
+
+.advantage--list-img {
+  max-width: 405px;
+}
+
+.advantage--list-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  gap: 32px;
+  margin-bottom: 112px;
+}
+
+.advantage--table {
+  color: var(---color-black);
+  max-width: 768px;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.advantage--text-margin {
+  margin-bottom: 80px;
+}
+
+.advantage--list {
+  max-width: 405px;
+  background-color: #cccccc;
+  flex: 1;
+  text-align: start;
+}
+
+.advantage--list-text {
+  padding: 32px 32px 8px;
+}
+
+.advantage--list-tabl {
+  padding: 32px 32px 16px;
+}
+
+@media (max-width: 1430px) {
+  .advantage--list {
+    max-width: 350px;
+  }
+  .advantage--list-img {
+    max-width: 350px;
+  }
+  .advantage--list-wrapper {
+    flex-wrap: wrap;
+  }
+   .choice--sercices-wrapper {
+    flex-wrap: wrap;
+  }
+}
+
