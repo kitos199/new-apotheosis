@@ -22,24 +22,41 @@ body.dark,
   color: var(---color-text-white);
 }
 
-.header--nav-bar {
-  display: flex;
+.header--nav-flex {
+  display: inline-flex;
   align-items: flex-end;
   margin: 18px 64px;
   gap: 35px;
+  width: 50%;
+}
+
+.header--nav-bar-close,
+.header--nav-open {
+  display: none;
+}
+
+.header--nav-bar {
+  display: flex;
+  align-items: flex-end;
+  /* width: 100%; */
+  gap: 30px;
 }
 .header--nav-bar__link {
   text-decoration: none;
   color: var(--color-text);
+  flex: 1 0 95px;
 }
-
+.header--nav--interface {
+  /* display: inline-block; */
+  position: absolute;
+  left: 93%;
+  top: 60px;
+}
 .header--switch-tem {
   display: none;
 }
 
-.header--switch {
-  margin-left: auto;
-}
+
 
 .header--switch-slider {
   width: 50px;
@@ -102,12 +119,12 @@ body.dark,
 }
 
 .description--table {
-  font-size: 52px;
+  font-size: 3.25rem;
   color: var(---color-text-white);
 }
 
 .description--description {
-  font-size: 18px;
+  font-size: 1.125em;
   color: var(---color-text-white);
 }
 
@@ -147,8 +164,9 @@ body.dark,
 
 .choice--description {
   max-width: 768px;
-  font-size: 18px;
+  font-size: 3rem;
   color: var(---color-black);
+  text-align: center;
 }
 
 .choice--link-btn {
@@ -182,7 +200,7 @@ body.dark,
 
 .choice--sercices-table {
   padding: 24px 32px 16px 32px;
-  font-size: 32px;
+  font-size: 2em;
 }
 
 .choice--sercices-text {
@@ -216,7 +234,7 @@ body.dark,
 .advantage--table {
   color: var(---color-black);
   max-width: 768px;
-  font-size: 48px;
+  font-size: 3em;
   text-align: center;
   margin-bottom: 24px;
 }
@@ -250,8 +268,53 @@ body.dark,
   .advantage--list-wrapper {
     flex-wrap: wrap;
   }
-   .choice--sercices-wrapper {
+  .choice--sercices-wrapper {
     flex-wrap: wrap;
   }
 }
 
+@media (max-width: 716px) {
+  .header--nav-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .choice--description {
+    font-size: 1.125rem;
+  }
+  .header--nav-bar {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: auto;
+  }
+  .header--switch-slider {
+    position: relative;
+    right: 29px;
+    margin: 10px 0px;
+  }
+  .header--nav--interface {
+    position: absolute;
+    top: 10px;
+  }
+  .header--nav-bar-close,
+  .header--nav-open {
+    display: block;
+  }
+  .header--nav-bar {
+    display: none;
+  }
+  .header--nav-bar.open {
+    display: flex;
+  }
+  .header--nav-bar.close {
+    display: none;
+  }
+  .header--nav-bar__link {
+    flex: 0 0 0;
+  }
+  .header--nav-bar-close.white,
+  .header--nav-open.white {
+    filter: brightness(0) invert(1);
+  }
+}
