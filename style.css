@@ -321,7 +321,9 @@ body.dark,
   .choice--sercices {
     min-width: 1px;
   }
-  .description--table, .choice--table, .advantage--table {
+  .description--table,
+  .choice--table,
+  .advantage--table {
     font-size: 35px;
     margin-bottom: 30px;
   }
@@ -337,9 +339,13 @@ body.dark,
     padding: 5px;
   }
   .advantage--list-img {
-    max-width:254px;
+    max-width: 254px;
   }
   .description {
     min-width: 350px;
+  }
+  .choice {
+    width: 350px;
+    margin-left: -45px;
   }
 }
