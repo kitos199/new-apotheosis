@@ -339,4 +339,7 @@ body.dark,
   .advantage--list-img {
     max-width:254px;
   }
+  .description {
+    min-width: 350px;
+  }
 }
