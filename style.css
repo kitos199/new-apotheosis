@@ -56,8 +56,6 @@ body.dark,
   display: none;
 }
 
-
-
 .header--switch-slider {
   width: 50px;
   height: 24px;
@@ -316,5 +314,29 @@ body.dark,
   .header--nav-bar-close.white,
   .header--nav-open.white {
     filter: brightness(0) invert(1);
+  }
+}
+
+@media (max-width: 500px) {
+  .choice--sercices {
+    min-width: 1px;
+  }
+  .description--table, .choice--table, .advantage--table {
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+  .choice--sercices-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .choice--sercices-text {
+    padding: 5px;
+  }
+  .choice--sercices-table {
+    padding: 5px;
+  }
+  .advantage--list-img {
+    max-width:254px;
   }
 }
