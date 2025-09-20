@@ -256,6 +256,31 @@ body.dark,
   padding: 32px 32px 16px;
 }
 
+/* Форма для связи  */
+
+.choice--challenge {
+  background-color: var(--bg-white);
+  width: 35%;
+  position: fixed;
+  top: 31.5%;
+  left: 31.5%;
+}
+
+.choice--form {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr;
+  padding: 30px;
+  gap: 15px 0px;
+}
+
+.submit {
+  grid-column: span 2;
+  padding: 8px;
+  justify-self: center;
+}
+
+
 @media (max-width: 1430px) {
   .advantage--list {
     max-width: 350px;
@@ -348,4 +373,22 @@ body.dark,
     width: 350px;
     margin-left: -45px;
   }
+  .choice--challenge{
+    width: 80%;
+  }
+  .choice--form {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 30px;
+    gap: 15px 0px;
+  }
+  #name,
+  #phone {
+    padding: 3px;
+  }
+  .submit{
+    grid-column: span 1;
+  }
 }
+
+

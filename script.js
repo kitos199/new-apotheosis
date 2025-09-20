@@ -4,8 +4,9 @@ const choice = document.querySelector('.choice');
 const closeNav = document.querySelector('.header--nav-bar-close');
 const openNav = document.querySelector('.header--nav-open');
 const headerNavBarLink = document.querySelector('.header--nav-bar__link');
+const choiceBtn = document.querySelector('.choice--link-btn')
 
-
+// Включает выключает тему
 themeToggle.addEventListener('change', () => {
   body.classList.toggle('dark');
   choice.classList.toggle('dark');
@@ -25,6 +26,8 @@ if (localStorage.getItem('theme') === 'dark') {
   themeToggle.checked = true;
 }
 
+
+// Скрывает и открывает меню
 openNav.addEventListener('click', () => {
   document.querySelector(".header--nav-bar").classList.remove("close")
   document.querySelector('.header--nav-bar').classList.add('open');
@@ -34,5 +37,10 @@ openNav.addEventListener('click', () => {
 closeNav.addEventListener("click", ()=>{
   document.querySelector(".header--nav-bar").classList.remove("open")
   document.querySelector(".header--nav-bar").classList.add('close')
+  
+})
+
+// При нажатии на связь что бы выходила окно форм для ввода номера и имени
+choiceBtn.addEventListener("click", (e)=>{
   
 })
