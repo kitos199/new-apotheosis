@@ -268,7 +268,7 @@ body.dark,
   z-index: 10;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  /* display: none; */
+  display: none;
 }
 
 /* Псевдо-overlay */
@@ -286,12 +286,28 @@ body::before {
   display: none;
 }
 
+.choice--close-btn {
+  width: 5%;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+}
+.choice--img-btn {
+  padding-top: 5px;
+}
+
+body.overlay-active::before,
+.choice--challenge.overlay-active {
+  display: block;
+}
+
 .choice--form {
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 1fr;
   padding: 30px;
   gap: 15px 0px;
+  margin-top: 30px;
 }
 
 .submit {
@@ -299,7 +315,6 @@ body::before {
   padding: 8px;
   justify-self: center;
 }
-
 
 @media (max-width: 1430px) {
   .advantage--list {
@@ -393,7 +408,7 @@ body::before {
     width: 350px;
     margin-left: -45px;
   }
-  .choice--challenge{
+  .choice--challenge {
     width: 81%;
     left: 48%;
   }
@@ -407,9 +422,13 @@ body::before {
   #phone {
     padding: 3px;
   }
-  .submit{
+  .submit {
     grid-column: span 1;
   }
+  .choice--close-btn{
+    width: 7%;
+  }
+  .choice--img-btn{
+    padding-top: 3px;
+  }
 }
-
-
