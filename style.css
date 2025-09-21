@@ -268,7 +268,7 @@ body.dark,
   z-index: 10;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  display: none;
+  /* display: none; */
 }
 
 /* Псевдо-overlay */
@@ -394,7 +394,8 @@ body::before {
     margin-left: -45px;
   }
   .choice--challenge{
-    width: 80%;
+    width: 81%;
+    left: 48%;
   }
   .choice--form {
     display: grid;
