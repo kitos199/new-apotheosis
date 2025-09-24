@@ -1,7 +1,7 @@
 :root {
   --bg-white: #f2f2f2;
-  --color-balck: #0d0b00;
-  ---color-text-white: #fff;
+  --color-black: #0d0b00;
+  --color-text-white: #fff;
 }
 
 * {
@@ -12,14 +12,14 @@
 }
 body {
   background-color: var(--bg-white);
-  color: var(--color-text);
+  color: var(--color-black);
   transition: 0.3s ease;
 }
 
 body.dark,
 .choice.dark {
-  background-color: var(--color-balck);
-  color: var(---color-text-white);
+  background-color: var(--color-black);
+  color: var(--color-text-white);
 }
 
 .header--nav-flex {
@@ -118,19 +118,19 @@ body.dark,
 
 .description--table {
   font-size: 3.25rem;
-  color: var(---color-text-white);
+  color: var(--color-text-white);
 }
 
 .description--description {
   font-size: 1.125em;
-  color: var(---color-text-white);
+  color: var(--color-text-white);
 }
 
 /* секция choice */
 
 .choice {
   margin-top: 112px;
-  background-color: var(---color-text-white);
+  background-color: var(--color-text-white);
 }
 
 .choice--wrapper {
@@ -153,7 +153,7 @@ body.dark,
 }
 
 .choice--table {
-  color: var(---color-black);
+  color: var(--color-black);
   max-width: 768px;
   font-size: 48px;
   text-align: center;
@@ -163,14 +163,14 @@ body.dark,
 .choice--description {
   max-width: 768px;
   font-size: 3rem;
-  color: var(---color-black);
+  color: var(--color-black);
   text-align: center;
 }
 
 .choice--link-btn {
   border: 1px solid #0d0b00;
   text-decoration: none;
-  color: var(---color-black);
+  color: var(--color-black);
   padding: 5px 24px;
   margin-bottom: 60px;
   margin-top: 166px;
@@ -230,7 +230,7 @@ body.dark,
 }
 
 .advantage--table {
-  color: var(---color-black);
+  color: var(--color-black);
   max-width: 768px;
   font-size: 3em;
   text-align: center;
@@ -268,7 +268,7 @@ body.dark,
   z-index: 10;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  display: none;
+  /* display: none; */
 }
 
 /* Псевдо-overlay */
@@ -286,34 +286,32 @@ body::before {
   display: none;
 }
 
-.choice--close-btn {
-  width: 5%;
-  position: absolute;
-  top: 5px;
-  right: 8px;
-}
-.choice--img-btn {
-  padding-top: 5px;
-}
-
-body.overlay-active::before,
-.choice--challenge.overlay-active {
-  display: block;
-}
-
 .choice--form {
+  margin-top: 25px;
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 1fr;
-  padding: 30px;
+  padding: 19px;
   gap: 15px 0px;
-  margin-top: 30px;
 }
 
 .submit {
   grid-column: span 2;
   padding: 8px;
   justify-self: center;
+}
+
+.choice--btn-close {
+  position: relative;
+  bottom: 180px;
+  left: 95%;
+}
+.choice--title {
+  color: var(--color-black);
+}
+
+#username,#phone{
+  padding: 5px;
 }
 
 @media (max-width: 1430px) {
@@ -410,7 +408,8 @@ body.overlay-active::before,
   }
   .choice--challenge {
     width: 81%;
-    left: 48%;
+    top: 23%;
+    left:48%;
   }
   .choice--form {
     display: grid;
@@ -418,17 +417,12 @@ body.overlay-active::before,
     padding: 30px;
     gap: 15px 0px;
   }
-  #name,
-  #phone {
-    padding: 3px;
-  }
+
   .submit {
     grid-column: span 1;
   }
-  .choice--close-btn{
-    width: 7%;
-  }
-  .choice--img-btn{
-    padding-top: 3px;
+  .choice--btn-close{
+    bottom: 265px;
+    left: 93%;
   }
 }

@@ -4,16 +4,14 @@ const choice = document.querySelector('.choice');
 const closeNav = document.querySelector('.header--nav-bar-close');
 const openNav = document.querySelector('.header--nav-open');
 const headerNavBarLink = document.querySelector('.header--nav-bar__link');
-const choiceBtn = document.querySelector('.choice--link-btn');
-const submitBtn = document.querySelector('.submit');
-const closeBtn = document.querySelector('.choice--close-btn');
+const choiceBtn = document.querySelector('.choice--link-btn')
 
 // Включает выключает тему
 themeToggle.addEventListener('change', () => {
   body.classList.toggle('dark');
   choice.classList.toggle('dark');
-  openNav.classList.toggle('white');
-  closeNav.classList.toggle('white');
+  openNav.classList.toggle('white')
+  closeNav.classList.toggle('white')
   localStorage.setItem(
     'theme',
     body.classList.contains('dark') ? 'dark' : 'light'
@@ -23,31 +21,26 @@ themeToggle.addEventListener('change', () => {
 if (localStorage.getItem('theme') === 'dark') {
   body.classList.add('dark');
   choice.classList.add('dark');
-  openNav.classList.add('white');
-  closeNav.classList.add('white');
+  openNav.classList.add("white")
+  closeNav.classList.add("white")
   themeToggle.checked = true;
 }
 
+
 // Скрывает и открывает меню
 openNav.addEventListener('click', () => {
-  document.querySelector('.header--nav-bar').classList.remove('close');
+  document.querySelector(".header--nav-bar").classList.remove("close")
   document.querySelector('.header--nav-bar').classList.add('open');
+  
 });
 
-closeNav.addEventListener('click', () => {
-  document.querySelector('.header--nav-bar').classList.remove('open');
-  document.querySelector('.header--nav-bar').classList.add('close');
-});
+closeNav.addEventListener("click", ()=>{
+  document.querySelector(".header--nav-bar").classList.remove("open")
+  document.querySelector(".header--nav-bar").classList.add('close')
+  
+})
 
 // При нажатии на связь что бы выходила окно форм для ввода номера и имени
-choiceBtn.addEventListener('click', (e) => {
-  body.classList.add('overlay-active');
-  document.querySelector('.choice--challenge').classList.add('overlay-active');
-});
-
-closeBtn.addEventListener("click", ()=>{
-  body.classList.remove('overlay-active');
-  document.querySelector('.choice--challenge').classList.remove('overlay-active');
-  document.querySelector('#name').required=false;
-  document.querySelector('#phone').required=false;
+choiceBtn.addEventListener("click", (e)=>{
+  
 })

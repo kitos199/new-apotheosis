@@ -99,7 +99,6 @@
               </p>
             </div>
           </div>
-          
         </div>
       </section>
       <section class="advantage">
@@ -145,17 +144,18 @@
         </div>
       </section>
       <div class="choice--challenge">
-            <form action="" method="get" class="choice--form">
-              <label for="name">Имя</label>
-              <input type="text" id="name" required />
+        <form action="" method="get" class="choice--form">
+          <label for="username" class="choice--title">Имя</label>
+          <input type="text" id="username" name="username" autocomplete="off" required />
 
-              <label for="phone">Телефон</label>
-              <input type="number" id="phone" required />
+          <label for="phone" class="choice--title">Телефон</label>
+          <input type="number" id="phone" name="phone" autocomplete="off" required />
 
-              <input type="submit" value="Отправить" class="submit" />
-              <button class="choice--close-btn"> <img class="choice--img-btn" src="img/Х.png" alt="Закрыть"></button>
-            </form>
-          </div>
+          <input type="submit" value="Отправить" class="submit" />
+        </form>
+          <img class="choice--btn-close" src="img/Х.png" alt="Закрыть" />
+        
+      </div>
     </main>
     <footer></footer>
     <script src="script.js"></script>
