@@ -329,7 +329,7 @@ body::before {
   }
 }
 
-@media (max-width: 716px) {
+@media (max-width: 758px) {
   .header--nav-flex {
     display: flex;
     flex-direction: column;
@@ -373,6 +373,9 @@ body::before {
   .header--nav-open.white {
     filter: brightness(0) invert(1);
   }
+  .choice--challenge{
+    width: 58%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -407,7 +410,7 @@ body::before {
     margin-left: -45px;
   }
   .choice--challenge {
-    width: 81%;
+    width: 78%;
     top: 23%;
     left:48%;
   }
