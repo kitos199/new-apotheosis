@@ -47,7 +47,6 @@ body.dark,
   flex: 1 0 95px;
 }
 .header--nav--interface {
-  /* display: inline-block; */
   position: absolute;
   left: 93%;
   top: 60px;
@@ -268,7 +267,7 @@ body.dark,
   z-index: 10;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  /* display: none; */
+  display: none;
 }
 
 /* Псевдо-overlay */
@@ -284,6 +283,10 @@ body::before {
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 5;
   display: none;
+}
+
+body.block::before, .choice--challenge.block{
+  display: block;
 }
 
 .choice--form {
@@ -310,7 +313,8 @@ body::before {
   color: var(--color-black);
 }
 
-#username,#phone{
+#username,
+#phone {
   padding: 5px;
 }
 
@@ -354,7 +358,7 @@ body::before {
     top: 10px;
   }
   .header--nav-bar-close,
-  .header--nav-open {
+  .header--nav-open{
     display: block;
   }
   .header--nav-bar {
@@ -373,7 +377,7 @@ body::before {
   .header--nav-open.white {
     filter: brightness(0) invert(1);
   }
-  .choice--challenge{
+  .choice--challenge {
     width: 58%;
   }
 }
@@ -412,7 +416,7 @@ body::before {
   .choice--challenge {
     width: 78%;
     top: 23%;
-    left:48%;
+    left: 48%;
   }
   .choice--form {
     display: grid;
@@ -424,7 +428,7 @@ body::before {
   .submit {
     grid-column: span 1;
   }
-  .choice--btn-close{
+  .choice--btn-close {
     bottom: 265px;
     left: 93%;
   }
