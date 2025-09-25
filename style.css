@@ -144,6 +144,10 @@ body.dark,
   margin-bottom: 32px;
 }
 
+.choice--img-reliability.white {
+  filter: brightness(0) invert(1);
+}
+
 .choice--img-project {
   width: 100%;
   max-width: 1280px;
@@ -152,7 +156,6 @@ body.dark,
 }
 
 .choice--table {
-  color: var(--color-black);
   max-width: 768px;
   font-size: 48px;
   text-align: center;
@@ -162,14 +165,12 @@ body.dark,
 .choice--description {
   max-width: 768px;
   font-size: 3rem;
-  color: var(--color-black);
   text-align: center;
 }
 
 .choice--link-btn {
   border: 1px solid #0d0b00;
   text-decoration: none;
-  color: var(--color-black);
   padding: 5px 24px;
   margin-bottom: 60px;
   margin-top: 166px;
@@ -285,7 +286,8 @@ body::before {
   display: none;
 }
 
-body.block::before, .choice--challenge.block{
+body.block::before,
+.choice--challenge.block {
   display: block;
 }
 
@@ -358,7 +360,7 @@ body.block::before, .choice--challenge.block{
     top: 10px;
   }
   .header--nav-bar-close,
-  .header--nav-open{
+  .header--nav-open {
     display: block;
   }
   .header--nav-bar {
