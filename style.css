@@ -268,7 +268,7 @@ body.dark,
   z-index: 10;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  display: none;
+  /* display: none; */
 }
 
 /* Псевдо-overlay */
@@ -298,17 +298,20 @@ body.block::before,
   grid-template-rows: 1fr;
   padding: 19px;
   gap: 15px 0px;
+  position:relative;
 }
 
 .submit {
   grid-column: span 2;
   padding: 8px;
   justify-self: center;
+  background-color: var(--bg-white);
+  color: var(--color-black);
 }
 
 .choice--btn-close {
-  position: relative;
-  bottom: 180px;
+  position: absolute;
+  bottom: 170px;
   left: 95%;
 }
 .choice--title {
@@ -417,7 +420,7 @@ body.block::before,
   }
   .choice--challenge {
     width: 78%;
-    top: 23%;
+    top: 45%;
     left: 48%;
   }
   .choice--form {
@@ -431,7 +434,7 @@ body.block::before,
     grid-column: span 1;
   }
   .choice--btn-close {
-    bottom: 265px;
+    bottom: 93%;
     left: 93%;
   }
 }
