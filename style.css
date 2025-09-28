@@ -268,7 +268,7 @@ body.dark,
   z-index: 10;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  display: none;
+  /* display: none; */
 }
 
 /* Псевдо-overlay */
@@ -298,6 +298,7 @@ body.block::before,
   grid-template-rows: 1fr;
   padding: 19px;
   gap: 15px 0px;
+  position:relative;
 }
 
 .submit {
@@ -307,8 +308,8 @@ body.block::before,
 }
 
 .choice--btn-close {
-  position: relative;
-  bottom: 180px;
+  position: absolute;
+  bottom: 170px;
   left: 95%;
 }
 .choice--title {

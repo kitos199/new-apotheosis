@@ -7,7 +7,10 @@ const headerNavBarLink = document.querySelector('.header--nav-bar__link');
 const choiceBtn = document.querySelector('.choice--link-btn');
 const choiceBtnClose = document.querySelector('.choice--btn-close');
 const choiceImgReliability = document.querySelector('.choice--img-reliability');
-const choiceForm = document.querySelector('.choice--form')
+const choiceForm = document.querySelector('.choice--form');
+const userName = document.querySelector('#username');
+const phone = document.querySelector('#phone');
+
 // Включает выключает тему
 themeToggle.addEventListener('change', () => {
   body.classList.toggle('dark');
@@ -68,7 +71,7 @@ choiceBtnClose.addEventListener('click', () => {
   removeClass('body', 'block');
 });
 
-choiceForm.addEventListener("submit", (e)=>{
-  e.target.preventDefault()
-  console.log(135);
-})
+// phone.value = '8';
+choiceForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+}); 
