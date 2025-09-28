@@ -43,35 +43,49 @@ const removeClass = (docName, className) => {
 
 // Скрывает и открывает меню
 openNav.addEventListener('click', () => {
-  // document.querySelector('.header--nav-bar').classList.remove('close');
-  // document.querySelector('.header--nav-bar').classList.add('open');
   removeClass('.header--nav-bar', 'close');
   addClass('.header--nav-bar', 'open');
 });
 
 closeNav.addEventListener('click', () => {
-  // document.querySelector('.header--nav-bar').classList.remove('open');
-  // document.querySelector('.header--nav-bar').classList.add('close');
   removeClass('.header--nav-bar', 'open');
   addClass('.header--nav-bar', 'close');
 });
 
 // При нажатии на связь что бы выходила окно форм для ввода номера и имени
 choiceBtn.addEventListener('click', (e) => {
-  // document.querySelector('.choice--challenge').classList.add('block');
-  // body.classList.add('block');
   addClass('.choice--challenge', 'block');
   addClass('body', 'block');
 });
 
+// Для закрытия окна форм
 choiceBtnClose.addEventListener('click', () => {
-  // document.querySelector('.choice--challenge').classList.remove('block');
-  // body.classList.remove('block');
   removeClass('.choice--challenge', 'block');
   removeClass('body', 'block');
 });
 
-// phone.value = '8';
+// События на от правку формы и проверку телефона
+
+const successful = ` <div class="successful-messge">
+<h3 class="successful-text">Спасибо мы с вами скоро свяжемся</h3>
+<img class="successful-close" src="img/Х.png" alt="Закрыть" />
+</div>`;
+
+function validationNumber(phone) {
+  const reg = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+  if (reg.test(phone) && phone.length === 11) {
+    body.insertAdjacentHTML("afterbegin",successful)
+    addClass(".successful-messge","show")
+    removeClass('.choice--challenge', 'block');
+    removeClass('body', 'block');
+    phone.value=0;
+    userName.value="";
+    
+  } else {
+    console.log('error');
+  }
+}
 choiceForm.addEventListener('submit', (e) => {
   e.preventDefault();
-}); 
+  validationNumber(phone.value);
+});
