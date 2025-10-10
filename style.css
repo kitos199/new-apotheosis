@@ -264,11 +264,14 @@ body.dark,
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.7);
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   z-index: 10;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  display: none;
+   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* Псевдо-overlay */
@@ -286,9 +289,15 @@ body::before {
   display: none;
 }
 
-body.block::before,
-.choice--challenge.block {
+body.block::before{
   display: block;
+
+}
+.choice--challenge.block {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+
 }
 
 .choice--form {
@@ -313,8 +322,8 @@ body.block::before,
 
 .choice--btn-close {
   position: absolute;
-  bottom: 170px;
-  left: 95%;
+  top: 5%;
+  right: 1%;
 }
 .choice--title {
   color: var(--color-black);
@@ -333,31 +342,34 @@ body.block::before,
 }
 
 .successful-messge {
-  position: relative;
-  width: 50%;
   position: fixed;
+  width: 50%;
   background-color: var(--bg-white);
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.8);
   border-radius: 8px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 7;
 }
 
-.successful-text {
-  color: var(--color-black);
-  text-align: center;
+.successful-messge.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.successful-text{
   font-size: 30px;
+  text-align: center;
   padding: 30px;
 }
-
-.successful-close{
-  position: absolute;
-  top: 0;
+.successful--btn-close{
+  position:absolute;
+  top: 5%;
   right: 1%;
 }
+
 
 @media (max-width: 1430px) {
   .advantage--list {
@@ -470,7 +482,7 @@ body.block::before,
     grid-column: span 1;
   }
   .choice--btn-close {
-    bottom: 93%;
-    left: 93%;
+    top:5%;
+    right:1%
   }
 }

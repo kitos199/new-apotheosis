@@ -54,38 +54,76 @@ closeNav.addEventListener('click', () => {
 
 // При нажатии на связь что бы выходила окно форм для ввода номера и имени
 choiceBtn.addEventListener('click', (e) => {
-  addClass('.choice--challenge', 'block');
-  addClass('body', 'block');
+  setTimeout(() => {
+    addClass('.choice--challenge', 'block');
+    addClass('body', 'block');
+  }, 10);
 });
 
 // Для закрытия окна форм
-choiceBtnClose.addEventListener('click', () => {
-  removeClass('.choice--challenge', 'block');
-  removeClass('body', 'block');
-});
-
+function closeBtn(btn) {
+  if (btn.className === 'choice--btn-close') {
+    btn.addEventListener('click', () => {
+      removeClass('.choice--challenge', 'block');
+      removeClass('body', 'block');
+    });
+  } else {
+    btn.addEventListener('click', () => {
+      removeClass('body', 'block');
+      document.querySelector('.successful-messge').innerHTML = '';
+      console.log(btn);
+    });
+  }
+}
+closeBtn(choiceBtnClose);
 // События на от правку формы и проверку телефона
 
 const successful = ` <div class="successful-messge">
-<h3 class="successful-text">Спасибо мы с вами скоро свяжемся</h3>
-<img class="successful-close" src="img/Х.png" alt="Закрыть" />
+<h3 class="successful-text">Спасибо, мы с вами скоро свяжемся</h3>
+<img class="successful--btn-close" src="img/Х.png" alt="Закрыть" />
 </div>`;
 
 function validationNumber(phone) {
   const reg = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
   if (reg.test(phone) && phone.length === 11) {
-    body.insertAdjacentHTML("afterbegin",successful)
-    addClass(".successful-messge","show")
+    body.insertAdjacentHTML('afterbegin', successful);
+    // addClass('.successful-messge', 'show');
     removeClass('.choice--challenge', 'block');
-    removeClass('body', 'block');
-    phone.value=0;
-    userName.value="";
-    
+    // removeClass('body', 'block');
+    setTimeout(() => {
+      addClass('.successful-messge', 'show');
+    }, 10);
+    closeBtn(document.querySelector('.successful--btn-close'));
+    let contacts;
+    return (contacts = {
+      name: userName.value,
+      phone: phone,
+    });
   } else {
     console.log('error');
+    return null;
   }
 }
+
 choiceForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  validationNumber(phone.value);
+  const objContacts = validationNumber(phone.value);
+  fetch('http://localhost:3000/contacts', {
+    method: 'POST',
+    body: JSON.stringify(objContacts),
+    headers: {
+      'Content-type': 'application/json',
+    },
+  })
+    .then((respons) => respons.json())
+    .then((data) => console.log(data))
+    .catch((data) => {
+      console.log(data);
+    });
+  phone.value = '';
+  userName.value = '';
+  setTimeout(() => {
+    removeClass('body', 'block');
+    document.querySelector('.successful-messge').innerHTML = '';
+  }, 3000);
 });
