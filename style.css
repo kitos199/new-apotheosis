@@ -269,7 +269,7 @@ body.dark,
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   z-index: 10;
   border-radius: 10px;
-   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 0;
   visibility: hidden;
 }
@@ -289,15 +289,13 @@ body::before {
   display: none;
 }
 
-body.block::before{
+body.block::before {
   display: block;
-
 }
 .choice--challenge.block {
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, -50%) scale(1);
-
 }
 
 .choice--form {
@@ -359,17 +357,17 @@ body.block::before{
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
-.successful-text{
+.successful-text {
+  color: var(--color-black);
   font-size: 30px;
   text-align: center;
   padding: 30px;
 }
-.successful--btn-close{
-  position:absolute;
+.successful--btn-close {
+  position: absolute;
   top: 5%;
   right: 1%;
 }
-
 
 @media (max-width: 1430px) {
   .advantage--list {
@@ -482,7 +480,7 @@ body.block::before{
     grid-column: span 1;
   }
   .choice--btn-close {
-    top:5%;
-    right:1%
+    top: 5%;
+    right: 1%;
   }
 }

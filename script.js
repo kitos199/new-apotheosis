@@ -66,30 +66,28 @@ function closeBtn(btn) {
     btn.addEventListener('click', () => {
       removeClass('.choice--challenge', 'block');
       removeClass('body', 'block');
+      userName.value = '';
+      phone.value = '';
     });
   } else {
     btn.addEventListener('click', () => {
       removeClass('body', 'block');
       document.querySelector('.successful-messge').innerHTML = '';
-      console.log(btn);
     });
   }
 }
 closeBtn(choiceBtnClose);
 // События на от правку формы и проверку телефона
 
-const successful = ` <div class="successful-messge">
+function validationNumber(phone) {
+  const reg = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+  const successful = ` <div class="successful-messge">
 <h3 class="successful-text">Спасибо, мы с вами скоро свяжемся</h3>
 <img class="successful--btn-close" src="img/Х.png" alt="Закрыть" />
 </div>`;
-
-function validationNumber(phone) {
-  const reg = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
   if (reg.test(phone) && phone.length === 11) {
     body.insertAdjacentHTML('afterbegin', successful);
-    // addClass('.successful-messge', 'show');
     removeClass('.choice--challenge', 'block');
-    // removeClass('body', 'block');
     setTimeout(() => {
       addClass('.successful-messge', 'show');
     }, 10);
@@ -108,22 +106,28 @@ function validationNumber(phone) {
 choiceForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const objContacts = validationNumber(phone.value);
-  fetch('http://localhost:3000/contacts', {
-    method: 'POST',
-    body: JSON.stringify(objContacts),
-    headers: {
-      'Content-type': 'application/json',
-    },
-  })
-    .then((respons) => respons.json())
-    .then((data) => console.log(data))
-    .catch((data) => {
-      console.log(data);
-    });
-  phone.value = '';
-  userName.value = '';
-  setTimeout(() => {
-    removeClass('body', 'block');
-    document.querySelector('.successful-messge').innerHTML = '';
-  }, 3000);
+
+  if (objContacts) {
+    fetch('http://localhost:3000/contacts', {
+      method: 'POST',
+      body: JSON.stringify(objContacts),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    })
+      .then((respons) => {
+        userName.value = '';
+        phone.value = '';
+        setTimeout(() => {
+          removeClass('body', 'block');
+          document.querySelector('.successful-messge')?.remove();
+        }, 3000);
+        return respons.json();
+      })
+      .catch((data) => {
+        alert('По пробуйте ещё');
+      });
+  } else {
+    alert('Проверьте данные');
+  }
 });
